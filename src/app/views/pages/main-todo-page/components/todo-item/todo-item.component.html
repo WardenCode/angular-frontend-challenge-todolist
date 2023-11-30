@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="center">
+    <input (change)="updateTodo()" [id]="'checkbox' + todo.id" class="checkbox" type="checkbox"
+      [checked]="todo.completed">
+    <label class="center" [for]="'checkbox' + todo.id">{{todo.completed ? '✓' : ''}}</label>
+  </div>
+
+  <p class="center">{{todo.id}}</p>
+
+  <div (click)="goToDetailedView()" class="info center">
+    <p class="title" [class.line-through]="todo.completed">{{todo.title}}</p>
+    <p class="description">{{todo.description | ellipsis:35}}</p>
+  </div>
+
+  <div class="center">
+    <button (click)="deleteTodo()" class="deleteBtn">&times;</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="actions">
+    <div></div>
+    <!-- <button class="toggle-button" (click)="toggleGrouping()">Sort By: {{(sortByComplete ? 'complete' : 'incomplete') |
+      titlecase}}</button> -->
+    <button class="new-task-button" (click)="openModal()">New Task</button>
+  </div>
+  <div class="table_header">
+    <p></p>
+    <p>Id</p>
+    <p>Title</p>
+    <p></p>
+  </div>
+  <!-- <app-todo-list [sortByComplete]="sortByComplete"></app-todo-list> -->
+  <app-todo-list />
+</div>
+
+@if (modalSwitch) {
+<app-modal />
+}

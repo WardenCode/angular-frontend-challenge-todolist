@@ -1,0 +1,35 @@
+<div class="backdrop">
+  <div class="modal">
+    <header class="modal-header">
+      <h2>New TODO</h2>
+      <button class="close" (click)="closeModal()">&times;</button>
+    </header>
+
+    <section class="modal-body">
+      <div class="form-container">
+        <div class="title-section">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" [(ngModel)]="newTodo.title" (ngModelChange)="onTitleChange()">
+          @if (titleTouched && !newTodo.title) {
+          <div class="hint">Title is required</div>
+          }
+        </div>
+        <div class="description-section">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" [(ngModel)]="newTodo.description"
+            (ngModelChange)="onDescriptionChange()"></textarea>
+          @if (descriptionTouched && !newTodo.description) {
+          <div class="hint">Description is required</div>
+          }
+
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="modal-footer">
+      <button class="cancel-button" (click)="closeModal()">Cancel</button>
+      <button type="submit" class="confirm-button" [disabled]="!isFormValid()" (click)="addTodo()">Add Todo</button>
+    </footer>
+  </div>
+</div>

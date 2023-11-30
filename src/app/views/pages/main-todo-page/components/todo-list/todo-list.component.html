@@ -1,0 +1,7 @@
+@for (todo of (data$ | async); track todo.description) {
+<app-todo-item [todo]="todo"></app-todo-item>
+} @empty {
+<div class="center">
+  <p>Doesn't exists TODO's</p>
+</div>
+}

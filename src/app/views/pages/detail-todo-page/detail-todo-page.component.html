@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="todo-detail">
+    <h2 class="todo-title">{{ todo.title }}</h2>
+    <p class="todo-id">ID: {{ todo.id }}</p>
+    <p [class]="todo.completed ? 'todo-completed' : 'todo-incompleted'">{{ todo.completed ? 'Completed' : 'Uncompleted'
+      }}
+    </p>
+    <p class="todo-description">{{ todo.description }}</p>
+  </div>
+</div>
